@@ -1,1 +1,137 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import './assets/css/bootstrap-grid.min.css';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  background: rgba(27, 31, 35, 0.05);
+}
+
+/* Estilos para los títulos de las páginas */
+h1 {
+  font-size: 36px;
+  color: #333;
+
+  text-align: center;
+  margin: 0 0 16px;
+}
+
+h2 {
+  font-size: 30px;
+  color: #555;
+
+  text-align: center;
+  margin: 0 0 16px;
+}
+
+h3 {
+  font-size: 25px;
+  color: #777;
+  margin-bottom: 10px;
+  text-align: center;
+  margin: 0 0 16px;
+}
+
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+
+  table {
+    width: 100%;
+
+    td,
+    th {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+}
+
+/* here's what you're looking for B-) */
+mat-nav-list.list-horizontal {
+  padding: 0;
+  .mat-list-item {
+    display: inline-block;
+    height: auto;
+    width: auto;
+  }
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row{
+  height: unset !important;
+}
+
+.mat-list-item .mat-list-item-content {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.mat-card {
+  margin-bottom: 24px;
+}
+
+span.status {
+  &-alive {
+    height: 8px;
+    width: 8px;
+    margin-right: 4px;
+    background: rgb(85, 204, 68);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  &-dead {
+    height: 8px;
+    width: 8px;
+    margin-right: 4px;
+    background: rgb(214, 61, 46);
+    border-radius: 50%;
+    display: inline-block;
+  }
+}
+
+/* Estilo del contenedor del menú */
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 8px 15px;
+  background-color: #333;
+  color: white;
+}
+
+/* Estilo del contenedor del logo */
+.logo-container {
+  margin-right: 20px; /* Ajusta el espacio entre el logo y el menú según tus necesidades */
+}
+
+/* Estilo de la lista de navegación */
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo de cada ítem de la lista de navegación */
+nav ul li {
+  margin-right: 20px;
+}
+
+/* Estilo del logo */
+.logo {
+  width: 100px;
+  height: auto;
+}
+

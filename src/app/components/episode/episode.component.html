@@ -1,0 +1,55 @@
+<h2>Listado de episodios Rick & Morty</h2>
+
+<div class="mat-elevation-z8">
+  <div class="table-responsive">
+    <div class="mat-elevation-z8">
+      <!-- character.component.html -->
+
+      <table mat-table [dataSource]="episodesDataSource" class="mat-elevation-z8">
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let episode">{{ episode.id }}</td>
+        </ng-container>
+
+        <!-- Episode Column -->
+        <ng-container matColumnDef="episode">
+          <th mat-header-cell *matHeaderCellDef>Episode</th>
+          <td mat-cell *matCellDef="let episode">{{ episode.name }}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let episode">{{ episode.name }}</td>
+        </ng-container>
+
+        <!-- Air Date Column -->
+        <ng-container matColumnDef="air_date">
+          <th mat-header-cell *matHeaderCellDef>Air Date</th>
+          <td mat-cell *matCellDef="let episode">{{episode.air_date}}</td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="characters">
+          <th mat-header-cell *matHeaderCellDef> Characters </th>
+          <td mat-cell *matCellDef="let episode">
+            <button (click)="episodeFilter(episode.id)" mat-stroked-button color="primary">Characters</button>
+          </td>
+        </ng-container>
+        <!-- Other Columns... -->
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+  <nav>
+    <button class="btn-paginacion" type="button" [disabled]="page < 2" (click)="setPage(page - 1)">
+      Atras
+    </button>
+    <span>Pagina: {{ page }}/{{ pages }}</span>
+    <button class="btn-paginacion" type="button" [disabled]="!(page < pages)" (click)="setPage(page + 1)">
+      Siguiente
+    </button>
+  </nav>

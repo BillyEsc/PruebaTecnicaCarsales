@@ -1,0 +1,6 @@
+<div *ngIf="charactersImages.length > 0">
+  <h2>List of Characters</h2>
+  <div class="character-images-container">
+    <img *ngFor="let imageUrl of charactersImages" [src]="imageUrl" alt="Character Image" class="character-image">
+  </div>
+</div>

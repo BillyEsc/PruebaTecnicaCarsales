@@ -1,0 +1,42 @@
+<h2>Listado de personajes Rick &amp; Morty</h2>
+
+<div  class="row">
+  <div class="col-lg-4 character" *ngFor="let character of characters">
+    <mat-card>
+      <div class="row">
+        <div class="acc-img">
+          <img src="{{character.image}}" alt="">
+        </div>
+        <div class="col-lg-7">
+          <mat-card-header >
+            <mat-card-title>{{ character.name }}</mat-card-title>
+            <mat-card-subtitle>
+              <span [ngClass]="character.status === 'Alive' ? 'status-alive' : 'status-dead'"></span>
+              {{ character.status }} - {{ character.species }}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <button (click)="characterFilter(character.id)" mat-stroked-button color="primary">Más información</button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+</div>
+
+<nav>
+  <button type="button" [disabled]="page < 2" (click)="setPage(page - 1)">
+    Atras
+  </button>
+  <span>Pagina: {{ page }}/{{ pages }}</span>
+  <button
+    type="button"
+    [disabled]="!(page < pages)"
+    (click)="setPage(page + 1)"
+  >
+    Siguiente
+  </button>
+</nav>
+
+
+
+
