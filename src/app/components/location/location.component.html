@@ -1,11 +1,7 @@
-<h2>Listado de locaciones Rick & Morty</h2>
-
-
-
+<h2>List of location Rick & Morty</h2>
 <div class="table-responsive">
   <div class="mat-elevation-z8">
     <!-- character.component.html -->
-
     <table mat-table [dataSource]="locationsDataSource" class="mat-elevation-z8">
       <!-- ID Column -->
       <ng-container matColumnDef="id">
@@ -43,14 +39,14 @@
 </div>
 <nav>
   <button type="button" [disabled]="page < 2" (click)="setPage(page - 1)">
-    Atras
+    Prev
   </button>
-  <span>Pagina: {{ page }}/{{ pages }}</span>
+  <span>Page: {{ page }}/{{ pages }}</span>
   <button
     type="button"
     [disabled]="!(page < pages)"
     (click)="setPage(page + 1)"
   >
-    Siguiente
+    Next
   </button>
 </nav>

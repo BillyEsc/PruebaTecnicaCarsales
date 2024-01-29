@@ -1,4 +1,4 @@
-<h2>Listado de personajes Rick &amp; Morty</h2>
+<h2>List of characters Rick &amp; Morty</h2>
 
 <div  class="row">
   <div class="col-lg-4 character" *ngFor="let character of characters">
@@ -15,7 +15,7 @@
               {{ character.status }} - {{ character.species }}
             </mat-card-subtitle>
           </mat-card-header>
-          <button (click)="characterFilter(character.id)" mat-stroked-button color="primary">Más información</button>
+          <button (click)="characterFilter(character.id)" mat-stroked-button color="primary">More information</button>
         </div>
       </div>
     </mat-card>
@@ -25,15 +25,15 @@
 
 <nav>
   <button type="button" [disabled]="page < 2" (click)="setPage(page - 1)">
-    Atras
+    Prev
   </button>
-  <span>Pagina: {{ page }}/{{ pages }}</span>
+  <span>Page: {{ page }}/{{ pages }}</span>
   <button
     type="button"
     [disabled]="!(page < pages)"
     (click)="setPage(page + 1)"
   >
-    Siguiente
+    Next
   </button>
 </nav>
 

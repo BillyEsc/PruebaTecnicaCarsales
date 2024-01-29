@@ -1,4 +1,4 @@
-<h2>Listado de episodios Rick & Morty</h2>
+<h2>List of episodes Rick &amp; Morty</h2>
 
 <div class="mat-elevation-z8">
   <div class="table-responsive">
@@ -46,10 +46,10 @@
   </div>
   <nav>
     <button class="btn-paginacion" type="button" [disabled]="page < 2" (click)="setPage(page - 1)">
-      Atras
+      Prev
     </button>
-    <span>Pagina: {{ page }}/{{ pages }}</span>
+    <span>Page: {{ page }}/{{ pages }}</span>
     <button class="btn-paginacion" type="button" [disabled]="!(page < pages)" (click)="setPage(page + 1)">
-      Siguiente
+      Next
     </button>
   </nav>

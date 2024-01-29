@@ -1,9 +1,9 @@
-import {Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Episode } from 'src/app/models/episode';
 import { ApiService } from 'src/app/services/api.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
-import { ListCharactersDialogComponent} from 'src/app/components/episode/list-characters-dialog/list-characters-dialog.component';
+import { ListCharactersDialogComponent } from 'src/app/components/episode/list-characters-dialog/list-characters-dialog.component';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 @Component({
@@ -37,33 +37,13 @@ export class EpisodeComponent implements OnInit {
       this.episodes = data.results;
       this.pages = data.info.pages;
       this.episodesDataSource = new MatTableDataSource<Episode>(this.episodes);
-});
-  }
-
-  applyFilter(event: Event): void {
-    const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
-
-    // Verifica si hay un filtro
-    if (filterValue !== "") {
-      this.request = { filter: filterValue };
-    } else {
-      this.request = {};
-    }
-
-    // Reinicia la página a la primera al aplicar un filtro
-    if (this.paginator) {
-      ''
-      this.paginator.firstPage();
-    }
-
-    this.loadEpisodePage();
+    });
   }
 
   setPage(page: number) {
     this.page = page;
     this.loadEpisodePage();
   }
-
 
   episodeFilter(id: number): void {
     // Realiza la llamada al endpoint para obtener los detalles del personaje por ID

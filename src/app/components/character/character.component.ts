@@ -19,7 +19,6 @@ export class CharacterComponent implements OnInit {
   characters: Character[];
 
   charactersDataSource: MatTableDataSource<Character>;
-  //episodes: Episode[];
 
   constructor(private apiService: ApiService, public dialog: MatDialog) { }
     displayedColumns = ['id', 'episode', 'name', 'air_date'];
@@ -36,10 +35,6 @@ export class CharacterComponent implements OnInit {
       this.charactersDataSource = new MatTableDataSource<Character>(this.characters);
       this.pages = data.info.pages;
     });
-  }
-
-  openDialog(): void {
-    // Lógica para abrir un diálogo utilizando MatDialog
   }
 
   setPage(page: number) {

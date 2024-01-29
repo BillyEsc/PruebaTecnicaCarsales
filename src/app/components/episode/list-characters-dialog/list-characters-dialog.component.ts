@@ -17,7 +17,7 @@ export class ListCharactersDialogComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: { episode: Episode }, private apiService: ApiService) {
     this.episodeDetails = data.episode;
     if (data && data.episode && data.episode.characters) {
-      this.loadCharactersImages(data.episode.characters.map(character => character.toString())); // Corregido aquí
+      this.loadCharactersImages(data.episode.characters.map(character => character.toString()));
     }
   }
 
